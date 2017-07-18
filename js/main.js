@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){
-  var signIn = document.querySelector('.signin');
-  var modal  = document.querySelector('.modal');
-  var close  = document.querySelector('.close');
-  var submit = document.querySelector('.submit');
-  var input  = document.querySelector('input');
+  var signIn  = document.querySelector('.signin');
+  var modal   = document.querySelector('.modal');
+  var close   = document.querySelector('.close');
+  var submit  = document.querySelector('.submit');
+  var input   = document.querySelector('input');
 
   signIn.addEventListener('click', function(){
     modal.style.display = 'block';
@@ -30,6 +30,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
   modal.addEventListener('click', function(){
     modal.style.display = 'none'
+  });
+
+  user.addEventListener('click', function(event){
+    event.stopPropagation();
+  });
+
+  pass.addEventListener('click', function(event){
+    event.stopPropagation();
   });
 
 });
