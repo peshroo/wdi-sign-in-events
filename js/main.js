@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(event){
+document.addEventListener('DOMContentLoaded', function(){
   var signIn = document.querySelector('.signin');
   var modal  = document.querySelector('.modal');
   var close  = document.querySelector('.close');
@@ -13,9 +13,10 @@ document.addEventListener('DOMContentLoaded', function(event){
     modal.style.display = 'none';
   });
 
-  submit.addEventListener('click', function(){
-    for(var i=0; i<input.length; i++) {
-      input[i].className = 'error';
+  submit.addEventListener('click', function(event){
+    event.stopPropagation();
+      for(var i=0; i<input.length; i++) {
+        input[i].className = 'error';
     }
   });
 
@@ -26,5 +27,9 @@ document.addEventListener('DOMContentLoaded', function(event){
       }
     });
   }
+
+  modal.addEventListener('click', function(){
+    modal.style.display = 'none'
+  });
 
 });
